@@ -2,5 +2,5 @@ package com.example.siabsen;
 
 
 
-public class ScannerActivity  {
+public class ScannerActivity {
 }

@@ -32,15 +32,18 @@
                 android:text="Login"
                 android:textSize="25sp" />
 
-          <com.google.android.material.textfield.TextInputEditText
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_username"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="Email"
+              android:hint="Username"
               android:layout_marginHorizontal="10dp"
               android:drawableEnd="@drawable/username_right"
               android:fontFamily="@font/poppinsmedium"
               />
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -71,24 +74,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-        <RelativeLayout
-            android:layout_marginHorizontal="20dp"
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginHorizontal="34dp"
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_back">
+            android:fontFamily="@font/poppinsbold"
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="12pt"
+            app:backgroundTint="#0FD6E8" />
 
-            <TextView
-                android:id="@+id/btn_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppinsbold"
-                android:gravity="center"
-                android:text="SIGNIN"
-                android:textColor="#fff"
-                android:textSize="22dp" />
-
-        </RelativeLayout>
     </LinearLayout>
 
 

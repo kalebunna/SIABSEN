@@ -9,8 +9,15 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.kongzue.dialogx.dialogs.TipDialog;
+
+import org.json.JSONObject;
 
 import java.text.BreakIterator;
 
@@ -19,9 +26,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        Button scan = findViewById(R.id.button_scan);
-
-
+        Button scan = findViewById(R.id.buttonscan);
+        AndroidNetworking.initialize(getApplicationContext());
 
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,13 +51,30 @@ public class HomeActivity extends AppCompatActivity {
             if (intentResult.getContents() == null) {
                 Toast.makeText(getBaseContext(), "Cancelled", Toast.LENGTH_SHORT).show();
             } else {
-                // if the intentResult is not null we'll set 
-                // the content and format of scan message
                 BreakIterator messageText;
+
 
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+    private void cek_scan(){
+        AndroidNetworking.post(Link.URI+"Auth/login")
+                .addBodyParameter("id_scan", password.getText().toString())
+                .addBodyParameter("id_user", username.getText().toString())
+                .setPriority(Priority.MEDIUM)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                    }
+                    @Override
+                    public void onError(ANError error) {
+                        TipDialog.dismiss();
+                        Toast.makeText(HomeActivity.this,"Terjadi Kesalahan !! COba Lagi",Toast.LENGTH_LONG).show();
+                    }
+                });
+                    }
     }
 }
