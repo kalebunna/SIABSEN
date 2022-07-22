@@ -16,19 +16,21 @@
             android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/home_selamat"
             android:textColor="@color/black"
             android:fontFamily="@font/poppinsmedium"
             android:textSize="16sp"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selamat Siang" />
+            android:text="" />
         <TextView
+            android:id="@+id/home_nama"
             android:layout_marginTop="-12sp"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Syauqan Wafiqi"
+            android:text=""
             android:fontFamily="@font/poppinsbold"
             android:textSize="20sp"
             />
@@ -207,12 +209,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:id="@+id/homesudah_absen_masuk"
                     android:textColor="@color/black"
                     android:layout_marginBottom="20dp"
                     android:textSize="15sp"
                     android:fontFamily="@font/urbanistbold"
                     android:gravity="center"
-                    android:text="Sudah Absen"
+                    android:text=""
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 </LinearLayout>
@@ -244,12 +247,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                     <TextView
+                        android:id="@+id/homesudah_absen_keluar"
                         android:textColor="@color/white"
                         android:layout_marginBottom="20dp"
                         android:textSize="15sp"
                         android:fontFamily="@font/urbanistbold"
                         android:gravity="center"
-                        android:text="Sudah Absen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
